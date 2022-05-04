@@ -7,3 +7,8 @@ sisesta laenusumma, intress, kuupäevad
 
 31.12 seisuga näitab arvestuslikku intressi
 laenu graafik pdf failina alla laadida
+
+04.05.2022 TODO
+Laenu kalkuleerimised tuleb ümber teha.
+Igale laenutüübile oma redux slice, inputContainer ning summary.
+Välja mõelda, mida näidata inputcontaineri all. Näiteks pie chart laenu kohta? Intressid vs tagasimakse suurus?
