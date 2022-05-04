@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { LoanTypes } from "../enums"
+import { LoanTypes } from "../enums.ts"
 
 const initialState = {
   loanType: LoanTypes.FullBullet,
