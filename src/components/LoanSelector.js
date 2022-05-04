@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 //redux
 import { useSelector, useDispatch } from "react-redux"
-import { setLoanType } from "../slices/loanSlice"
+import { setLoanType } from "../slices/loanSelectorSlice"
+
+import { LoanTypes } from "../enums.ts"
 
 import FormControl from "@mui/material/FormControl"
 import FormLabel from "@mui/material/FormLabel"
@@ -13,7 +15,8 @@ import RadioGroup from "@mui/material/RadioGroup"
 
 const LoanSelector = () => {
   const dispatch = useDispatch()
-  const loanType = useSelector((state) => state.loan.loanType)
+  const loanType = useSelector((state) => state.type.loanType)
+
   return (
     <Wrapper>
       <FormControl>
@@ -26,17 +29,17 @@ const LoanSelector = () => {
           onChange={(e) => dispatch(setLoanType(e.target.value))}
         >
           <FormControlLabel
-            value="bullet"
+            value={LoanTypes.Bullet}
             control={<Radio />}
             label="Bullet loan"
           />
           <FormControlLabel
-            value="full-bullet"
+            value={LoanTypes.FullBullet}
             control={<Radio />}
             label="Full-Bullet loan"
           />
           <FormControlLabel
-            value="balloon"
+            value={LoanTypes.Balloon}
             control={<Radio />}
             label="Balloon loan"
           />
