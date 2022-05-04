@@ -17,7 +17,12 @@ import {
   getDaysBetweenPeriod,
 } from "./helpers.ts"
 
-import { InputContainer, LoanSelector, SummaryDisplay } from "./components"
+import {
+  ChartContainer,
+  InputContainer,
+  LoanSelector,
+  SummaryDisplay,
+} from "./components"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 
@@ -170,6 +175,7 @@ function App() {
           <Grid item xs={12} md={9}>
             <LoanSelector />
             <InputContainer handleClick={handleClick} />
+            <ChartContainer />
           </Grid>
           <Grid item xs={12} md={3}>
             <SummaryDisplay
