@@ -10,7 +10,6 @@ today = today.toISOString()
 tomorrow = tomorrow.toISOString()
 
 const initialState = {
-  loanType: "full-bullet",
   loanAmount: "",
   interestRate: "",
   daysPerYear: 365,
@@ -26,9 +25,6 @@ export const loanSlice = createSlice({
   name: "loan",
   initialState,
   reducers: {
-    setLoanType: (state, action) => {
-      state.loanType = action.payload
-    },
     setLoanAmount: (state, action) => {
       state.loanAmount = action.payload
     },
@@ -72,7 +68,6 @@ export const loanSlice = createSlice({
 })
 
 export const {
-  setLoanType,
   setLoanAmount,
   setInterestRate,
   setDaysPerYear,
