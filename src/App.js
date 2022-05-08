@@ -26,6 +26,8 @@ import {
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 
+import { LoanTypes } from "./enums.ts"
+
 import getYear from "date-fns/getYear"
 import parseISO from "date-fns/parseISO"
 import intervalToDuration from "date-fns/intervalToDuration"
@@ -35,13 +37,14 @@ function App() {
   const dispatch = useDispatch()
 
   const {
-    loanType,
     startDate: start,
     endDate: end,
     loanAmount,
     interestRate,
     daysPerYear,
   } = useSelector((state) => state.loan)
+
+  const { loanType } = useSelector((state) => state.type)
 
   const startDate = parseISO(start)
   const endDate = parseISO(end)
@@ -155,10 +158,10 @@ function App() {
       (startDate !== null || startDate !== "") &&
       (endDate !== null || endDate !== "")
     ) {
-      if (loanType === "full-bullet") {
+      if (loanType === LoanTypes.FullBullet) {
         dispatch(setCalculatedTotalInterestAmount(interests))
         dispatch(calculateTotalAmount())
-      } else if (loanType === "bullet") {
+      } else if (loanType === LoanTypes.Bullet) {
         dispatch(setCalculatedTotalInterestAmount(0))
         dispatch(calculateTotalAmount())
       } else {
